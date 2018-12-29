@@ -1,0 +1,42 @@
+{
+  "name": "<%= appName %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "node ./bin/postinstall",
+    "precommit": "pretty-quick --staged",
+    "format": "pretty-quick",
+    "start": "node ./bin/server",
+    "dev": "micro-dev -p 4567 --silent",
+    "test": "npm run lint && nyc ava test",
+    "lint": "npm run format && xo"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "author": "<%= name %> <<%= email %>>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "find-my-way": "^1.15.4",
+    "micro": "^9.3.3",
+    "micro-compose": "0.0.3",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "async-to-gen": "^1.4.0",
+    "ava": "^0.25.0",
+    "debug": "^4.1.0",
+    "got": "^9.2.2",
+    "micro-dev": "^3.0.0",
+    "nyc": "^13.0.1",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
+    "test-listen": "^1.1.0",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "prettier": true
+  }
+}
