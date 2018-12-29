@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+'use strict';
+
+require('dotenv').load();
+
+// Set the environment vars
+process.env.DEBUG = process.env.DEBUG || '*';
+process.env.NODE_ENV = 'production';
+
+const micro = require('micro');
+const app = require('../app');
+const log = require('../lib/log');
+
+// Access the logLine function
+const { logLine } = log;
+
+const server = micro(app);
+server.on('listening', () => logLine({}, `-- Open your api: http://localhost:${server.address().port}/ -- NODE_ENV: ${process.env.NODE_ENV} --`, 'Info'));
+server.listen(process.env.PORT || '4567');
