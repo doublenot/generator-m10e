@@ -6,7 +6,7 @@
   "scripts": {
     "precommit": "pretty-quick --staged",
     "format": "pretty-quick",
-    "test": "npm run lint && ava",
+    "test": "xo && ava",
     "lint": "npm run format && xo"
   },
   "dependencies": {
