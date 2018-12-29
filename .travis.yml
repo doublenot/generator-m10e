@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- v10.15.0
+- v11.6.0
+sudo: false
+before_install:
+- npm install -g npm
+install:
+- npm install
+script:
+- npm test
+deploy:
+  provider: npm
+  email: ilya@doublenot.co
+  api_key:
+    secure: IaxyjP6UJi69fnSam8QEPgz/mPyVc8mcJGueVLBG2RWlNdgOXLJ36mMUzIlP/MyXiZ6978HbGTCN3hiQnjeT3vxkkfWK0wPIpk3CrKQ5+nTXUzmgHrAjhJW3iDQAemPbIe5efXk/1Qr0Ok6FdEVozL1/QIOqDVf/aMDfvgEaZxZQz9hdPtEL9PxUE5xzV+o9WX7ZtDmFXB0zt6qzzj+YYFNNnWZOCxbYVPx6DBB68l+TikRSOZwNd2/E82QnpVJ1GcXOQixpozJT98RZXz4Ec0HR8+IdKQROOoQrGyWCGGSopCCKzVrr3pQKInskJeUYcV1SDgHeHGBjshKPwz3c30c76bhmfPexHSLgQyEzNN40nF+x50kV0SywzYlX5//VQOQMjkYD+LQxIKF+28tvVwe4/2mj5+jO41/re+d4oPqL9J/kWMVj0v7HgFUo+1nCF0GvZRq1Hdu3u/tdmqj7Fv9GvcUgH/M/u4EHciZk1H6Fs+0aMTkjuPgEn3Sz8dY/yFhhdeILvURfVhFG+mFbGZEWrZrT9Rl8qsPzAjjgZ4a5Ztf3JSf/C6p2/514s8hwQ+198j3bdWWE7/oKmH1UdtCRuz735I34DsgzsQjeIoTbTYEXsJBMwJYYx4ClRtvKV+8Dq/5GoUQZfpp3GMpEzYAj+fRTksGdoccIvEVBOno=
+  on:
+    tags: true
+    repo: doublenot/generator-m10e
